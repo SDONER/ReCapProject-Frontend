@@ -8,6 +8,7 @@ import { CarDetailComponent } from '../car-detail/car-detail.component';
 import { CarDetail } from 'src/app/models/carDetailDto';
 import { Image } from 'src/app/models/image';
 
+
 @Component({
   selector: 'app-image-add',
   templateUrl: './image-add.component.html',
