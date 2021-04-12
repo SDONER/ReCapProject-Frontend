@@ -45,7 +45,7 @@ export class CarService {
 
   postCar(car:Car):Observable<ResponseModel> {
     let newPath = this.apiUrl + "cars/add" 
-    return this.httpClient.post<ResponseModel>(newPath, car);
+    return this.httpClient.post<ResponseModel>(newPath , car);
   }
 
 }

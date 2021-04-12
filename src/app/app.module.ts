@@ -30,6 +30,8 @@ import { CarAddComponent } from './components/car-add/car-add.component';
 import { BrandAddComponent } from './components/brand-add/brand-add.component';
 import { ColorAddComponent } from './components/color-add/color-add.component';
 import { LoginComponent } from './components/login/login.component';
+import { HTTP_INTERCEPTORS } from 'node_modules2/@angular/common/http';
+import { AuthInterceptor } from './auth.interceptor';
 
 
 
@@ -71,7 +73,9 @@ import { LoginComponent } from './components/login/login.component';
     }) 
   ],
 
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

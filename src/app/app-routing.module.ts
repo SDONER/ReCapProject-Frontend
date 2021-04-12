@@ -8,6 +8,7 @@ import { ColorAddComponent } from './components/color-add/color-add.component';
 import { LoginComponent } from './components/login/login.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { RentDetailComponent } from './components/rent-detail/rent-detail.component';
+import { LoginGuard } from './guards/login.guard';
 
 
 const routes: Routes = [
@@ -21,8 +22,8 @@ const routes: Routes = [
   {path:"rentals/getrentdetails/:carId",component:RentDetailComponent},
   {path:"payment",component:PaymentComponent},
   {path:"car/add",component:CarAddComponent},
-  {path:"color/add",component:ColorAddComponent},
-  {path:"brand/add",component:BrandAddComponent},
+  {path:"color/add",component:ColorAddComponent, canActivate:[LoginGuard]},
+  {path:"brand/add",component:BrandAddComponent,canActivate:[LoginGuard]},
   {path:"login",component:LoginComponent},
 
 ];

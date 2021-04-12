@@ -31,13 +31,15 @@ createLoginForm(){
   }
 
 login(){
-  
     if(this.loginForm.valid){
-    console.log(this.loginForm.value);
-    let loginModel = Object.assign({},this.loginForm.value)
-    this.toastrService.error("xxx")
-    this.authService.login(loginModel).subscribe(data=>{
-      console.log(data)
+     //console.log(this.loginForm.value);
+     let loginModel = Object.assign({},this.loginForm.value)
+     this.authService.login(loginModel).subscribe(response=>{
+      this.toastrService.info(response.message)
+      localStorage.setItem("token",response.data.token)
+      console.log(response)
+    }, responseError=>{
+      this.toastrService.error(responseError.error)
     })
    }
   }
