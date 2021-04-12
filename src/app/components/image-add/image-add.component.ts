@@ -28,7 +28,7 @@ export class ImageAddComponent implements OnInit {
     private toastrService:ToastrService , 
     private formBuilder:FormBuilder ,
     private fileUploader:FileUploader,
-    private imageModel:Image
+
   ) { }
 
   ngOnInit(): void {

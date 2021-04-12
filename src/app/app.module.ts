@@ -4,7 +4,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http'
 import {RouterModule} from '@angular/router'
 import {appRoutes} from './routes'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FileUploadModule } from "ng2-file-upload";
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,13 +23,14 @@ import { BrandSearchPipe } from './brand-search.pipe';
 import { RentDetailComponent } from './components/rent-detail/rent-detail.component';
 
 import {ToastrModule} from 'ngx-toastr';
+import {FileUploadModule } from "ng2-file-upload";
 import { BankComponent } from './components/bank/bank.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { CarAddComponent } from './components/car-add/car-add.component';
 import { BrandAddComponent } from './components/brand-add/brand-add.component';
 import { ColorAddComponent } from './components/color-add/color-add.component';
 import { LoginComponent } from './components/login/login.component';
-import { ImageAddComponent } from './components/image-add/image-add.component';
+
 
 
 @NgModule({
@@ -53,7 +54,7 @@ import { ImageAddComponent } from './components/image-add/image-add.component';
     BrandAddComponent,
     ColorAddComponent,
     LoginComponent,
-    ImageAddComponent,
+
     
   ],
   imports: [
