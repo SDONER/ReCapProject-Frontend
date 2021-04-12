@@ -3,6 +3,9 @@ import { FormGroup, FormBuilder, Validator,Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CarService } from 'src/app/services/car.service';
+import { FileUploader } from 'ng2-file-upload';
+import { CarDetailComponent } from '../car-detail/car-detail.component';
+import { CarDetail } from 'src/app/models/carDetailDto';
 
 
 
@@ -13,11 +16,14 @@ import { CarService } from 'src/app/services/car.service';
 })
 export class CarAddComponent implements OnInit {
   carAddForm : FormGroup;
+  imagePath:CarDetail[]=[];
+  
 
   constructor( private carService:CarService, 
      private activatedRoute:ActivatedRoute, 
     private toastrService:ToastrService , 
-    private formBuilder:FormBuilder 
+    private formBuilder:FormBuilder ,
+    private fileUploader:FileUploader
     ) { }
 
   ngOnInit(): void {
@@ -42,7 +48,7 @@ export class CarAddComponent implements OnInit {
   add(){
    if(this.carAddForm.valid){
     let carModel = Object.assign({},this.carAddForm.value) 
-    this.carService.postBrand(carModel).subscribe(response=>{
+    this.carService.postCar(carModel).subscribe(response=>{
       console.log(response)
       this.toastrService.success(response.message,"Araç kaydı yapıldı.")
     },responseError=>{
@@ -55,4 +61,7 @@ export class CarAddComponent implements OnInit {
    }
 
   }
+
+
+
 }

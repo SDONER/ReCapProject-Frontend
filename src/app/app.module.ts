@@ -4,6 +4,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http'
 import {RouterModule} from '@angular/router'
 import {appRoutes} from './routes'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {FileUploadModule } from "ng2-file-upload";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +29,7 @@ import { CarAddComponent } from './components/car-add/car-add.component';
 import { BrandAddComponent } from './components/brand-add/brand-add.component';
 import { ColorAddComponent } from './components/color-add/color-add.component';
 import { LoginComponent } from './components/login/login.component';
+import { ImageAddComponent } from './components/image-add/image-add.component';
 
 
 @NgModule({
@@ -51,6 +53,7 @@ import { LoginComponent } from './components/login/login.component';
     BrandAddComponent,
     ColorAddComponent,
     LoginComponent,
+    ImageAddComponent,
     
   ],
   imports: [
@@ -60,6 +63,7 @@ import { LoginComponent } from './components/login/login.component';
     FormsModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    FileUploadModule,
     RouterModule.forRoot(appRoutes),
     ToastrModule.forRoot({
       positionClass:"toast-bottom-right"

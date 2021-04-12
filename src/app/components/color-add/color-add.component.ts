@@ -37,7 +37,7 @@ export class ColorAddComponent implements OnInit {
       let colorModel = Object.assign({},this.colorAddForm.value) 
       this.colorService.postColor(colorModel).subscribe(response=>{
         console.log(response)
-        this.toastrService.success(response.message,"Marka kaydı yapıldı.")
+        this.toastrService.success(response.message,"Renk kaydı yapıldı.")
       })
       }else{
         this.toastrService.error("Formdaki bilgiler boş olamaz!")
