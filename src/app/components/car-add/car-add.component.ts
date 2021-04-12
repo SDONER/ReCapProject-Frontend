@@ -15,8 +15,7 @@ export class CarAddComponent implements OnInit {
   carAddForm : FormGroup;
 
   constructor( private carService:CarService, 
-    carDetailService:CarService,
-    private activatedRoute:ActivatedRoute, 
+     private activatedRoute:ActivatedRoute, 
     private toastrService:ToastrService , 
     private formBuilder:FormBuilder 
     ) { }

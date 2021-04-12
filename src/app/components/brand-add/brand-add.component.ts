@@ -39,11 +39,10 @@ export class BrandAddComponent implements OnInit {
     this.brandService.postBrand(brandModel).subscribe(response=>{
         this.toastrService.success(response.message,"Marka kaydı yapıldı.")
     },responseError=>{
-      if(responseError.error.Errors.length>1){
-        console.log(responseError.error.Errors)
-        for (let i = 0; i <responseError.error.Errors.length; i++) {
-          this.toastrService.error(responseError.error.errors[i].ErrorMessage,"Doğrulama hatası")   
-          
+      if(responseError.error.length > 0){
+        console.log(responseError.error.Errors.length)
+        for (let i = 0; i < responseError.error.Errors.length; i++) {
+          this.toastrService.error(responseError.error.Errors[i].ErrorMessage,"Doğrulama hatası")   
         }     
       }
     })
