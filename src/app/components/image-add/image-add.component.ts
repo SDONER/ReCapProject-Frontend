@@ -28,6 +28,7 @@ export class ImageAddComponent implements OnInit {
     private toastrService:ToastrService , 
     private formBuilder:FormBuilder ,
     private fileUploader:FileUploader,
+ 
 
   ) { }
 
